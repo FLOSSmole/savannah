@@ -1,0 +1,7 @@
+-- for sv_projects
+ALTER TABLE `sv_projects` CHANGE `description` `description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+ALTER TABLE `sv_projects` CHANGE `gnu_or_non` `gnu_or_non` ENUM('gnu','nongnu') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `sv_projects` CHANGE `project_long_name` `project_long_name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'long name from the main project page';
+ALTER TABLE `sv_projects` CHANGE `project_group_type` `project_group_type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
+ALTER TABLE `sv_projects` CHANGE `license` `license` VARCHAR(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
+ALTER TABLE `sv_projects` CHANGE `development_status` `development_status` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
