@@ -28,7 +28,6 @@
 # python 2SavannahIndexesTable.py <datasource_id> <password>
 #
 # purpose:
-# grab a list of the projects on Launchpad
 # get the name, url, and html of each savannah project page 
 ################################################################
 
