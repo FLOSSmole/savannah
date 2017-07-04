@@ -5,3 +5,23 @@ ALTER TABLE `sv_projects` CHANGE `project_long_name` `project_long_name` VARCHAR
 ALTER TABLE `sv_projects` CHANGE `project_group_type` `project_group_type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
 ALTER TABLE `sv_projects` CHANGE `license` `license` VARCHAR(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
 ALTER TABLE `sv_projects` CHANGE `development_status` `development_status` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
+
+-- for sv_indexes
+CREATE TABLE IF NOT EXISTS `sv_indexes` (
+  `datasource_id` int(11) NOT NULL,
+  `project_name` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `project_url` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `project_html` mediumtext CHARACTER SET utf8,
+  `last_updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `sv_indexes`
+--
+ALTER TABLE `sv_indexes`
+ ADD PRIMARY KEY (`datasource_id`,`project_name`);
+
