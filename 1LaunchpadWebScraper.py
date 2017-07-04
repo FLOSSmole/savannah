@@ -28,7 +28,6 @@
 # python 1SavannahWebScraper.py <datasource_id> <password>
 #
 # purpose:
-# grab a list of the projects on Launchpad
 # get the project name, project long name, and gnu or non of each savannah project 
 ################################################################
 
