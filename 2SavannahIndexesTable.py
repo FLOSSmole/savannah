@@ -54,7 +54,7 @@ try:
 except pymysql.Error as err:
     print(err)
 
-selectQuery = 'SELECT project_name FROM sv_projects WHERE datasource_id = %s'
+selectQuery = 'SELECT project_name FROM sv_projects'
 
 insertQuery = 'INSERT INTO sv_indexes (datasource_id, \
                                         project_name, \
