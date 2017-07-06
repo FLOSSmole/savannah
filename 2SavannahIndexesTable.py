@@ -56,12 +56,13 @@ except pymysql.Error as err:
 
 selectQuery = 'SELECT project_name FROM sv_projects'
 
-insertQuery = 'INSERT INTO sv_indexes (datasource_id, \
-                                        project_name, \
-                                        project_url, \
-                                        project_html, \
-                                        last_updated) \
-            VALUES(%s, %s, %s, %s, now())'
+insertQuery = 'INSERT INTO sv_project_indexes (datasource_id, \
+                                               project_name, \
+                                               indexUrl, \
+                                               indexhtml, \
+                                               memberhtml, \
+                                               date_collected) \
+                VALUES(%s, %s, %s, %s, %s, now())'
 
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -71,24 +72,29 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Connection': 'keep-alive'}
 
 try:
-    cursor.execute(selectQuery,(datasource_id,))
+    cursor.execute(selectQuery)
     listOfProjects = cursor.fetchall()
 
     for project in listOfProjects:
         name = project[0]
         print('working on', name)
 
-        project_url = 'https://savannah.nongnu.org/projects/' + name
-        print(project_url)
-        req = urllib2.Request(project_url, headers=hdr)
-        project_html = urllib2.urlopen(req).read()
+        indexUrl = 'https://savannah.nongnu.org/projects/' + name
+        print(indexUrl)
+        req = urllib2.Request(indexUrl, headers=hdr)
+        indexhtmlhtml = urllib2.urlopen(req).read()
+
+        memberUrl = 'https://savannah.nongnu.org/project/memberlist.php?group=' + name
+        req2 = urllib2.Request(memberUrl, headers=hdr)
+        memberhtml = urllib2.urlopen(req2).read()
 
         try:
             cursor.execute(insertQuery,
                            (datasource_id,
                             name,
-                            project_url,
-                            project_html))
+                            indexUrl,
+                            indexhtmlhtml,
+                            memberhtml))
             db.commit()
             print(name, " inserted into indexes table!\n")
         except pymysql.Error as err:
