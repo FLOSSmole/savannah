@@ -5,6 +5,7 @@ ALTER TABLE `sv_projects` CHANGE `project_long_name` `project_long_name` VARCHAR
 ALTER TABLE `sv_projects` CHANGE `project_group_type` `project_group_type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
 ALTER TABLE `sv_projects` CHANGE `license` `license` VARCHAR(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
 ALTER TABLE `sv_projects` CHANGE `development_status` `development_status` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main project page';
+ALTER TABLE `sv_projects` CHANGE `registration_date` `registration_date` DATETIME NULL DEFAULT NULL;
 
 -- for sv_project_indexes
 ALTER TABLE `sv_project_indexes` ADD `indexUrl` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ;
