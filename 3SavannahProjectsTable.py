@@ -28,7 +28,7 @@
 # python 3SavannahProjectsTable.py <datasource_id> <password>
 #
 # purpose:
-# get the name, url, and html of each savannah project page 
+# get the information of each savannah project page 
 ################################################################
 
 import re
