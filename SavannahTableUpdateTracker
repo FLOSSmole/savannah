@@ -24,3 +24,5 @@ ALTER TABLE `sv_developers` CHANGE `description` `description` TEXT CHARACTER SE
 ALTER TABLE `sv_developers` CHANGE `infohtml` `infohtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_developers` CHANGE `skillshtml` `skillshtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_developers` CHANGE `member_since` `member_since` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main developer page';
+ALTER TABLE `sv_developers` CHANGE `infohtml` `infohtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+ALTER TABLE `sv_developers` CHANGE `skillshtml` `skillshtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
