@@ -80,15 +80,15 @@ except pymysql.Error as err:
 
 selectQuery = 'SELECT project_name, memberhtml FROM sv_project_indexes'
 
-insertQuery = 'INSERT INTO sv_developers (datasource_id, \
-                                          dev_loginname, \
-                                          real_name, \
-                                          description, \
-                                          infohtml, \
-                                          skillshtml, \
-                                          member_since, \
-                                          developer_id, \
-                                          date_collected) \
+insertQuery = 'INSERT IGNORE INTO sv_developers (datasource_id, \
+                                                 dev_loginname, \
+                                                 real_name, \
+                                                 description, \
+                                                 infohtml, \
+                                                 skillshtml, \
+                                                 member_since, \
+                                                 developer_id, \
+                                                 date_collected) \
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, now())'
 
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
