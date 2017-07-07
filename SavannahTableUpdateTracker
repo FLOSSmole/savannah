@@ -12,3 +12,11 @@ ALTER TABLE `sv_project_indexes` ADD `indexUrl` VARCHAR(200) CHARACTER SET utf8 
 ALTER TABLE `sv_project_indexes` CHANGE `project_name` `project_name` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_project_indexes` CHANGE `indexhtml` `indexhtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_project_indexes` CHANGE `memberhtml` `memberhtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '"view members" on home page';
+
+-- for sv_developers
+ALTER TABLE `sv_developers` CHANGE `dev_loginname` `dev_loginname` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `sv_developers` CHANGE `real_name` `real_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+ALTER TABLE `sv_developers` CHANGE `description` `description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+ALTER TABLE `sv_developers` CHANGE `infohtml` `infohtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `sv_developers` CHANGE `skillshtml` `skillshtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `sv_developers` CHANGE `member_since` `member_since` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from main developer page';
