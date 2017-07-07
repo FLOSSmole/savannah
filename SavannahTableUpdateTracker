@@ -13,6 +13,10 @@ ALTER TABLE `sv_project_indexes` CHANGE `project_name` `project_name` VARCHAR(30
 ALTER TABLE `sv_project_indexes` CHANGE `indexhtml` `indexhtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_project_indexes` CHANGE `memberhtml` `memberhtml` MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '"view members" on home page';
 
+-- for sv_developer_projects
+ALTER TABLE `sv_developer_projects` CHANGE `dev_loginname` `dev_loginname` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `sv_developer_projects` CHANGE `project_name` `project_name` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '';
+
 -- for sv_developers
 ALTER TABLE `sv_developers` CHANGE `dev_loginname` `dev_loginname` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE `sv_developers` CHANGE `real_name` `real_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
