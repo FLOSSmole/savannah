@@ -64,7 +64,7 @@ try:
 except pymysql.Error as err:
     print(err)
 
-selectQuery = 'SELECT project_name, memberhtml FROM sv_project_indexes' # LIMIT 2'
+selectQuery = 'SELECT project_name, memberhtml FROM sv_project_indexes'
 
 insertQuery = 'INSERT INTO sv_developer_projects (datasource_id, \
                                                   dev_loginname, \
@@ -79,9 +79,8 @@ try:
         name = project[0]
         html = project[1]
         print('\nworking on', name)
-        #print(html)
+
         soup = BeautifulSoup(html, 'html.parser')
-        # print(soup)
         userRegex = '<a href=\"/users/(.*?)\"'
         
         td = soup.find_all('td')
