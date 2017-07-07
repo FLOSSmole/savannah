@@ -92,7 +92,7 @@ try:
 except pymysql.Error as err:
     print(err)
 
-selectQuery = 'SELECT project_name, indexhtml FROM sv_project_indexes'  # WHERE project_name = "freeride" LIMIT 1'
+selectQuery = 'SELECT project_name, indexhtml FROM sv_project_indexes'
 
 updateQuery = 'UPDATE sv_projects SET description = %s, \
                                       id_num = %s, \
